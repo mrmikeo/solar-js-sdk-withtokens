@@ -1,6 +1,11 @@
-# Node Solar SDK
+# Solar SDK
 
-[![https://t.me/@nayiem](https://telegram.me/@nayiem)
+<p align="center">
+    <img src="https://github.com/solar-network/solar-js-sdk/blob/master/banner.jpg" />
+</p>
+
+
+[![https://t.me/@nayiem](https://telegram.me/@nayiem)]
 
 A Promised NodeJS Module for connecting with the Solar v2 API
 
