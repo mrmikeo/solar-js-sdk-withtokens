@@ -1,0 +1,21 @@
+{
+    "name": "solar-js-sdk",
+    "version": "0.0.1",
+    "description": "This package file is for all the dependencies for Solar API Helper",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/solar-network/solar-js-sdk.git"
+    },
+    "dependencies": {
+        "big.js": "^5.2.2",
+        "request": "^2.88.0",
+        "solarjs": "git+https://github.com/solar-network/solar-js.git"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Nayiem Willems",
+    "license": "MIT"
+}
