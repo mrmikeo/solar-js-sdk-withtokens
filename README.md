@@ -5,7 +5,7 @@
 </p>
 
 
-[![https://t.me/nayiem]Telegram]
+[Telegram](https://t.me/nayiem)
 
 A Promised NodeJS Module for connecting with the Solar v2 API
 
@@ -45,14 +45,14 @@ const solarSlp1 = new solarSdk.solarSlp1Api(solarApi, 'https://slp.testnet.sh/ap
 
 #### Crypto
 
-##### Method
+**Method**
 solarApi.getApiUrl()
-##### Returns
+**Returns**
 Current endpoint url, such as "https://sxp.mainnet.sh/api"
 
-##### Method
+**Method**
 solarApi.getNewAddress()
-##### Returns
+**Returns**
 New Address Object:
 ```
 {
@@ -63,30 +63,30 @@ New Address Object:
 }
 ```
 
-##### Method
+**Method**
 solarApi.validateAddress(address)
-##### Inputs
+**Inputs**
 address: Solar address to validate
-##### Returns
+**Returns**
 true, false, or error (false)
 
-##### Method
+**Method**
 solarApi.buildTransaction(receiverAddress, amount, memo, passPhrase, secondPassphrase = null, feeOverride = null)
-##### Inputs
+**Inputs**
 receiverAddress: Solar address to send to
 amount: Amount in solar units (ie, 1 SXP = 100000000 solar units)
 memo: Up to 255 characters which will be placed into VendorField
 passPhrase: Senders mnemonic passphrase
 secondPassphrse:  Senders second mnemonic passphrase (if enabled)
 feeOverride: Override default fee settings with new value.  Value is in solar units, ie 0.02SXP = 2000000
-##### Returns
+**Returns**
 signed transaction object 
 
 #### Blockchain
 
-##### Method
+**Method**
 solarApi.getBlockChain()
-##### Returns
+**Returns**
 General blockchain information:
 ```
 {
@@ -100,16 +100,16 @@ General blockchain information:
 }
 ```
 
-##### Method
+**Method**
 solarApi.listBlocks(page, limit, id, height, orderBy)
-##### Inputs
+**Inputs**
 page: (int, default 1) The number of the page that will be returned
 limit: (int, default 100) The number of resources per page
 id: (string, default null) The id number of the block to be retrieved
 height: (int, default null) The height of the block to be retrieved
 orderBy: (string: default 'timestamp:desc') The column by which the resources will be sorted
 The orderBy parameter supports the following values: id, height, previous_block, payload_hash, generator_public_key, timestamp
-##### Returns
+**Returns**
 Array of block objects
 
 
