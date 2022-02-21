@@ -8,11 +8,11 @@
         "url": "git+https://github.com/solar-network/solar-js-sdk.git"
     },
     "dependencies": {
+        "@solar-network/crypto": "^3.1.5",
         "big.js": "^5.2.2",
-        "request": "^2.88.0",
-        "solarjs": "git+https://github.com/solar-network/solar-js.git"
+        "bip39": "^3.0.4",
+        "request": "^2.88.0"
     },
-    "devDependencies": {},
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },

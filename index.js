@@ -5,7 +5,7 @@
 module.exports = {
 
     /*solar devnet*/
-    dsolarApi: require('./lib/dsolarApi'),
-    dsslpApi: require('./lib/dsslpApi'),
+    solarApi: require('./lib/dsolarApi').default,
+    solarSlp1Api: require('./lib/dsslp1Api').default,
 
 }
