@@ -44,12 +44,7 @@ const solarSlp1 = new solarSdk.solarSlp1Api(solarApi, 'https://slp.testnet.sh/ap
 ### Solar Api Methods (solarApi)
 
 #### Crypto
-
-**Method**  
-solarApi.getApiUrl()  
-**Returns**  
-Current endpoint url, such as "https://sxp.mainnet.sh/api"
-
+***
 **Method**  
 solarApi.getNewAddress()  
 **Returns**  
@@ -62,14 +57,14 @@ New Address Object:
 	mnemonic: "*mnemonic phrase*"
 }
 ```
-
+---
 **Method**  
 solarApi.validateAddress(address)  
 **Inputs**  
 address: Solar address to validate  
 **Returns**  
 true, false, or error (false)
-
+---
 **Method**  
 solarApi.buildTransaction(receiverAddress, amount, memo, passPhrase, secondPassphrase = null, feeOverride = null)  
 **Inputs**  
@@ -81,9 +76,14 @@ secondPassphrse:  Senders second mnemonic passphrase (if enabled)
 feeOverride: Override default fee settings with new value.  Value is in solar units, ie 0.02SXP = 2000000  
 **Returns**  
 signed transaction object 
-
+---
 #### Blockchain
-
+***
+**Method**  
+solarApi.getApiUrl()  
+**Returns**  
+Current endpoint url, such as "https://sxp.mainnet.sh/api"
+---
 **Method**  
 solarApi.getBlockChain()  
 **Returns**  
@@ -99,7 +99,7 @@ General blockchain information:
   }
 }
 ```
-
+---
 **Method**  
 solarApi.listBlocks(page, limit, id, height, orderBy)  
 **Inputs**  
@@ -111,6 +111,7 @@ orderBy: (string: default 'timestamp:desc') The column by which the resources wi
 The orderBy parameter supports the following values: id, height, previous_block, payload_hash, generator_public_key, timestamp  
 **Returns**  
 Array of block objects
+---
 
 
 
