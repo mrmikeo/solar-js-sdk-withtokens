@@ -41,7 +41,12 @@ const solarSlp1 = new solarSdk.solarSlp1Api(solarApi, 'https://slp.testnet.sh/ap
 })();
 ```
 
-## Solar Api Methods (solarApi)
+Jump To [solarApi Methods](#solar-api-methods-solarapi)  
+Jump To [solarSlp1 Methods](#solar-slp1-api-methods-solarslp1)  
+Jump To [solarSlp2 Methods](#solar-slp2-api-methods-solarslp2)  
+Jump To [Common JSON Objects](#common-json-objects)  
+
+# Solar Api Methods (solarApi)
 
 ## getNewAddress
 **Method**  
@@ -73,12 +78,14 @@ true, false, or error (false)
 solarApi.buildTransaction(receiverAddress, amount, memo, passPhrase, secondPassphrase = null, feeOverride = null)
 
 **Inputs**  
-receiverAddress: Solar address to send to  
-amount: Amount in solar units (ie, 1 SXP = 100000000 solar units)  
-memo: Up to 255 characters which will be placed into VendorField  
-passPhrase: Senders mnemonic passphrase  
-secondPassphrse:  Senders second mnemonic passphrase (if enabled)  
-feeOverride: Override default fee settings with new value.  Value is in solar units, ie 0.02SXP = 2000000
+|Name|Type|Description|
+|----|-----|-------| 
+|receiverAddress|string|Solar address to send to  |
+|amount|int|Amount in solar units (ie, 1 SXP = 100000000 solar units)  |
+|memo|string|Up to 255 characters which will be placed into VendorField  |
+|passPhrase|string|Senders mnemonic passphrase  |
+|secondPassphrse|string|Senders second mnemonic passphrase (if enabled)  |
+|feeOverride|int|Override default fee settings with new value.  Value is in solar units, ie 0.02SXP = 2000000|
 
 **Returns**  
 signed transaction object 
@@ -880,9 +887,43 @@ Peer information object of connected node
 
 
 
-## Solar SLP2 Api Methods (solarSlp2)
+# Solar SLP2 Api Methods (solarSlp2)
 
 
 
 
+# Common JSON Object Types
+
+## Block
+```
+{	
+	id:"6e3784bed06b5c1581d5b78787ac587e1396ff58a2acef4d4b713f50ccea4cbe"
+	version:0
+	height:569534
+	previous:"73b17a8a6043798b47df07780466f992727753f4b9091149c16e6c8b2bdea97a"
+	forged: {
+		reward:"1162500000"
+		fee:"0"
+		amount:"0"
+		total:"1162500000"
+	}
+	payload: {
+		hash:"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+		length:0
+	}
+	generator: {	
+		username:"beta106"
+		address:"D9DGVfuoyLWkG7h2iH8HnWM3kFTd28H3cp"
+		publicKey:"021ea11edbe1d10af043c4bb17506d4ed623ab05eb042d6ba40c8da06e5cbd7405"
+	}
+	signature:"3044022066a163bfaa2385cf86c6cf8adbabf4126ea77cb66feb761430a52a91928ff2c4022040e09563400f54f8a69136f842567d6c646d4d87a9d9fa7e428583c63e3985b4"
+	confirmations:1
+	transactions:0
+	timestamp: {
+		epoch:5205688
+		unix:1645423288
+		human:"2022-02-21T06:01:28.000Z"
+	}
+}
+```
 
