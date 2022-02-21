@@ -113,11 +113,14 @@ General blockchain information:
 solarApi.listBlocks(page, limit, id, height, orderBy)
 
 **Inputs**  
-page: (int, default 1) The number of the page that will be returned  
-limit: (int, default 100) The number of resources per page  
-id: (string, default null) The id number of the block to be retrieved  
-height: (int, default null) The height of the block to be retrieved  
-orderBy: (string: default 'timestamp:desc') The column by which the resources will be sorted  
+|Name|Type|Description|
+|----|-----|-------| 
+|page|int|(default 1) The number of the page that will be returned|
+|limit|int|(default 100) The number of resources per page|
+|id|string|(default null) The id number of the block to be retrieved|
+|height|int|(default null) The height of the block to be retrieved|
+|orderBy|string|(default 'timestamp:desc') The column by which the resources will be sorted|
+
 The orderBy parameter supports the following values: id, height, previous_block, payload_hash, generator_public_key, timestamp
 
 **Returns**  
@@ -128,7 +131,9 @@ Array of block objects
 solarApi.getBlockByHeight(height)
 
 **Inputs**  
-height:  block height to retrieve information for
+|Name|Type|Description|
+|----|-----|-------| 
+|height|int|block height to retrieve information for|
 
 **Returns**  
 block object
@@ -138,7 +143,9 @@ block object
 solarApi.getBlockByID(id)
 
 **Inputs**  
-id: block id to retrieve information for
+|Name|Type|Description|
+|----|-----|-------| 
+|id|string|block id to retrieve information for|
 
 **Returns**  
 block object
@@ -155,7 +162,9 @@ block object of last created block
 solarApi.getTransactionsByBlockID(id)
 
 **Inputs**  
-id: block id to retrieve transaction list from
+|Name|Type|Description|
+|----|-----|-------| 
+|id|string|block id to retrieve transaction list from|
 
 **Returns**  
 array of transaction objects
@@ -165,38 +174,42 @@ array of transaction objects
 solarApi.searchBlocks(page, limit, body)
 
 **Inputs**  
-page	                    int	        The number of the page that will be returned.  
-limit                       int	        The number of resources per page.  
+|Name|Type|Description|
+|----|-----|-------| 
+|page|int|The number of the page that will be returned.|
+|limit|int|The number of resources per page.|
 
 body is a json object which can contain any of the following:
 
-id                          string      ID of the block.  
-version                     int         Version of the block.  
-previousBlock               int         ID of the previous block.  
-payloadHash                 string      Hash of the payload.  
-generatorPublicKey          string      Public key of the forger who forged the block.  
-blockSignature              string      Signature of the block.  
-timestamp                   object      Timestamp range for block creation time. Measured in number of seconds since the genesis block.  
-timestamp.from              int         Block creation time must be bigger or equal to this.  
-timestamp.to                int         Block creation time must be smaller or equal to this.  
-height                      object      Height range of the block. The genesis block has height 1.  
-height.from                 int         Block height must be bigger or equal to this.  
-height.to                   int         Block height must be smaller or equal to this.  
-numberOfTransactions        object      Ranage for number of transactions contained in the block.  
-numberOfTransactions.from   int         The number of transactions in the block must be bigger or equal to this.  
-numberOfTransactions.to     int         The number of transactions in the block must be smaller or equal to this.  
-totalAmount                 object      Range for total amount transacted in the block, including block reward, transaction fees and transactions' amounts. In satoshi.  
-totalAmount.from            int         Block total amount must be bigger or equal to this.  
-totalAmount.to              int         Block total amount must be smaller or equal to this.  
-totalFee                    object      Range for the sum of all transactions' fees in the block. In satoshi.  
-totalFee.from               int         The sum of all transactions' fees in the block must be bigger or equal to this.  
-totalFee.to                 int         The sum of all transactions' fees in the block must be smaller or equal to this.  
-reward                      object      Range for block reward. In satoshi.  
-reward.from                 int         Block reward must be bigger or equal to this.  
-reward.to                   int         Block reward must be smaller or equal to this.  
-payloadLength               object      Range for block payload length. In bytes.  
-payloadLength.from          int         Block payload length must be bigger or equal to this.  
-payloadLength.to            int         Block payload length must be smaller or equal to this.  
+|Name|Type|Description|
+|----|-----|-------| 
+|id|string|ID of the block.|
+|version|int|Version of the block.|
+|previousBlock|int|ID of the previous block.|
+|payloadHash|string|Hash of the payload.|
+|generatorPublicKey|string|Public key of the forger who forged the block.|
+|blockSignature|string|Signature of the block.|
+|timestamp|object|Timestamp range for block creation time. Measured in number of seconds since the genesis block.|
+|timestamp.from|int|Block creation time must be bigger or equal to this.|
+|timestamp.to|int|Block creation time must be smaller or equal to this.|
+|height|object|Height range of the block. The genesis block has height 1.|
+|height.from|int|Block height must be bigger or equal to this.|
+|height.to|int|Block height must be smaller or equal to this.|
+|numberOfTransactions|object|Ranage for number of transactions contained in the block.|
+|numberOfTransactions.from|int|The number of transactions in the block must be bigger or equal to this.  |
+|numberOfTransactions.to|int|The number of transactions in the block must be smaller or equal to this.  |
+|totalAmount|object|Range for total amount transacted in the block, including block reward, transaction fees and transactions' amounts. In satoshi. |
+|totalAmount.from|int|Block total amount must be bigger or equal to this.  |
+|totalAmount.to|int|Block total amount must be smaller or equal to this.  |
+|totalFee|object|Range for the sum of all transactions' fees in the block. In satoshi.  |
+|totalFee.from|int|The sum of all transactions' fees in the block must be bigger or equal to this.  |
+|totalFee.to|int|The sum of all transactions' fees in the block must be smaller or equal to this.  |
+|reward|object|Range for block reward. In satoshi.  |
+|reward.from|int|Block reward must be bigger or equal to this.  |
+|reward.to|int|Block reward must be smaller or equal to this.  |
+|payloadLength|object|Range for block payload length. In bytes.  |
+|payloadLength.from|int|Block payload length must be bigger or equal to this.  |
+|payloadLength.to|int|Block payload length must be smaller or equal to this.  |
             
 **Returns**  
 array of matching block objects
@@ -206,9 +219,11 @@ array of matching block objects
 solarApi.listDelegates(page, limit, orderBy)
 
 **Inputs**  
-page	    int	        The number of the page that will be returned.  
-limit	    int	        The number of resources per page.  
-orderBy	    string	    The column by which the resources will be sorted.
+|Name|Type|Description|
+|----|-----|-------| 
+|page|int|The number of the page that will be returned.  |
+|limit|int|The number of resources per page.  |
+|orderBy|string|The column by which the resources will be sorted.|
 
 orderBy valid fields:  username, rank, votes
 
@@ -220,7 +235,9 @@ array of delegate objects
 solarApi.getDelegate(identifier)
 
 **Inputs**  
-identifier  string  	{username|address|publicKey}
+|Name|Type|Description|
+|----|-----|-------| 
+|identifier|string|{username|address|publicKey}|
 
 **Returns**  
 delegate object
@@ -228,10 +245,13 @@ delegate object
 ## getDelegateBlocks
 **Method**  
 solarApi.getDelegateBlocks(identifier, page, limit)
+
 **Inputs**  
-page		int	        The number of the page that will be returned.  
-limit		int	        The number of resources per page.  
-identifier (REQUIRED)	string      {username|address|publicKey}
+|Name|Type|Description|
+|----|-----|-------| 
+|page|int|The number of the page that will be returned.  |
+|limit|int|The number of resources per page.  |
+|identifier|string|(REQUIRED) {username|address|publicKey}|
             
 **Returns**  
 array of matching block objects
@@ -241,9 +261,11 @@ array of matching block objects
 solarApi.getDelegateVoters = function(identifier, page, limit)
 
 **Inputs**  
-page		int	        The number of the page that will be returned.  
-limit		int	        The number of resources per page.  
-identifier (REQUIRED)	string      {username|address|publicKey}
+|Name|Type|Description|
+|----|-----|-------| 
+|page|int|The number of the page that will be returned.  |
+|limit|int|The number of resources per page.  |
+|identifier|string|(REQUIRED) {username|address|publicKey}|
 
 **Returns**  
 array of voter objects
@@ -253,33 +275,37 @@ array of voter objects
 solarApi.searchDelegates(page, limit, body)
 
 **Inputs**  
-page	                int	        The number of the page that will be returned.
-limit	                int	        The number of resources per page.
+|Name|Type|Description|
+|----|-----|-------| 
+|page|int|The number of the page that will be returned.|
+|limit|int|The number of resources per page.|
 
 body is a json object which can contain any of the following:
 
-address					string		The address of the delegate to be retrieved.
-publicKey				string		The public key of the delegate to be retrieved.
-username				string		The username of the delegate to be retrieved.
-usernames				array		The usernames of the delegates to be retrieved.
-approval				object		The approval rate of the delegates to be retrieved.
-approval.from			float		The lower limit of the approval rate.
-approval.to				float		The upper limit of the approval rate.
-forgedFees				object		The forged fees of the delegates to be retrieved.
-forgedFees.from			int			The lower limit of the forged fees.
-forgedFees.to			int			The upper limit of the forged fees.
-forgedRewards			object		The forged rewards of the delegates to be retrieved.
-forgedRewards.from		int			The lower limit of the forged rewards.
-forgedRewards.to		int			The upper limit of the forged rewards.
-forgedTotal				object		The forged total of the delegates to be retrieved.
-forgedTotal.from		int			The lower limit of the forged total.
-forgedTotal.to			int			The upper limit of the forged total.
-producedBlocks			object		The produced blocks count of the delegates to be retrieved.
-producedBlocks.from		int			The lower limit of the produced blocks count.
-producedBlocks.to		int			The upper limit of the produced blocks count.
-voteBalance				object		The vote balance of the delegates to be retrieved.
-voteBalance.from		int			The lower limit of the vote balance.
-voteBalance.to			int			The upper limit of the vote balance.
+|Name|Type|Description|
+|----|-----|-------| 
+|address|string|The address of the delegate to be retrieved.|
+|publicKey|string|The public key of the delegate to be retrieved.|
+|username|string|The username of the delegate to be retrieved.|
+|usernames|array|The usernames of the delegates to be retrieved.|
+|approval|object|The approval rate of the delegates to be retrieved.|
+|approval.from|float|The lower limit of the approval rate.|
+|approval.to|float|The upper limit of the approval rate.|
+|forgedFees|object|The forged fees of the delegates to be retrieved.|
+|forgedFees.from|int|The lower limit of the forged fees.|
+|forgedFees.to|int|The upper limit of the forged fees.|
+|forgedRewards|object|The forged rewards of the delegates to be retrieved.|
+|forgedRewards.from|int|The lower limit of the forged rewards.|
+|forgedRewards.to|int|The upper limit of the forged rewards.|
+|forgedTotal|object|The forged total of the delegates to be retrieved.|
+|forgedTotal.from|int|The lower limit of the forged total.|
+|forgedTotal.to|int|The upper limit of the forged total.|
+|producedBlocks|object|The produced blocks count of the delegates to be retrieved.|
+|producedBlocks.from|int|The lower limit of the produced blocks count.|
+|producedBlocks.to|int|The upper limit of the produced blocks count.|
+|voteBalance|object|The vote balance of the delegates to be retrieved.|
+|voteBalance.from|int|The lower limit of the vote balance.|
+|voteBalance.to|int|The upper limit of the vote balance.|
             
 **Returns**  
 array of matching delegate objects
@@ -324,13 +350,15 @@ node sync status information
 solarApi.getPeers(page, limit, port, status, os, version, orderBy)
 
 **Inputs**  
-page		int			The number of the page that will be returned.
-limit		int			The number of resources per page.
-port		int			The port by which the resources will be filtered.
-status		string		The status by which the resources will be filtered.
-os			string		The operating system by which the resources will be filtered.
-version		string		The node version by which the resources will be filtered.
-orderBy		string		The column by which the resources will be sorted.
+|Name|Type|Description|
+|----|-----|-------| 
+|page|int|The number of the page that will be returned.|
+|limit|int|The number of resources per page.|
+|port|int|The port by which the resources will be filtered.|
+|status|string|The status by which the resources will be filtered.|
+|os|string|The operating system by which the resources will be filtered.|
+|version|string|The node version by which the resources will be filtered.|
+|orderBy|string|The column by which the resources will be sorted.|
             
 **Returns**  
 array of peer objects
@@ -340,7 +368,9 @@ array of peer objects
 solarApi.getPeerByIP(ip)
 
 **Inputs**  
-ip		string		IP address of peer
+|Name|Type|Description|
+|----|-----|-------| 
+|ip|string|IP address of peer|
 
 **Returns**  
 peer object
@@ -350,7 +380,9 @@ peer object
 solarApi.createTransaction(transactions)
 
 **Inputs**  
-transactions	array	Array of signed transaction objects to send for confirmation
+|Name|Type|Description|
+|----|-----|-------| 
+|transactions|array|Array of signed transaction objects to send for confirmation|
 
 **Returns**  
 transaction result object
@@ -360,7 +392,9 @@ transaction result object
 solarApi.getTransactionByID(id)
 
 **Inputs**  
-id		string		Transaction ID to retrieve
+|Name|Type|Description|
+|----|-----|-------| 
+|id|string|Transaction ID to retrieve|
 
 **Returns**  
 transaction object
@@ -370,12 +404,14 @@ transaction object
 solarApi.listTransactions(page, limit, type, blockId, id, orderBy)
 
 **Inputs**  
-page		int			The number of the page that will be returned.
-limit		int			The number of resources per page.
-type		int			The transaction type to be retrieved.
-blockId		int			The block id to be retrieved.
-id			int			The transaction id to be retrieved.
-orderBy		string		The column by which the resources will be sorted.
+|Name|Type|Description|
+|----|-----|-------| 
+|page|int|The number of the page that will be returned.|
+|limit|int|The number of resources per page.|
+|type|int|The transaction type to be retrieved.|
+|blockId|int|The block id to be retrieved.|
+|id|int|The transaction id to be retrieved.|
+|orderBy|string|The column by which the resources will be sorted.|
             
 The orderBy parameter supports the following values: id, block_id, type, version, timestamp, amount, fee
             
@@ -387,8 +423,10 @@ array of matching transaction objects
 solarApi.listUnconfirmedTransactions(page, limit)
 
 **Inputs**  
-page		int			The number of the page that will be returned.
-limit		int			The number of resources per page.
+|Name|Type|Description|
+|----|-----|-------| 
+|page|int|The number of the page that will be returned.|
+|limit|int|The number of resources per page.|
             
 **Returns**  
 array of unconfirmed transaction objects
@@ -398,7 +436,9 @@ array of unconfirmed transaction objects
 solarApi.getUnconfirmedTransactionByID(id)
 
 **Inputs**  
-id			string		The transaction id.
+|Name|Type|Description|
+|----|-----|-------| 
+|id|string|The transaction id.|
 
 **Returns**  
 transaction object
@@ -408,30 +448,34 @@ transaction object
 solarApi.searchTransactions(page, limit, body)
 
 **Inputs**  
-page	                int	        The number of the page that will be returned.
-limit	                int	        The number of resources per page.
+|Name|Type|Description|
+|----|-----|-------| 
+|page|int|The number of the page that will be returned.|
+|limit|int|The number of resources per page.|
 
 body is a json object containing any of the following:
 
-orderBy                 string      The field in which to order the results
-id                      string      Transaction id
-blockId                 string      Block id
-type                    int         Transaction type
-version                 int         Transaction version
-senderPublicKey         string      Sender public key
-senderId                string      Sender address
-recipientId             string      Recipient address
-ownerId                 string      ...
-vendorFieldHex          string      ...
-timestamp               object      Timestamp
-timestamp.from          int         Seconds in epoch time
-timestamp.to            int         Seconds in epoch time
-amount                  object      Amount
-amount.from             int         Amount in satoshis
-amount.to               int         Amount in satoshis
-fee                     object      Fee
-fee.from                int         Fee in satoshis
-fee.to                  int         Fee in satoshis
+|Name|Type|Description|
+|----|-----|-------| 
+|orderBy|string|The field in which to order the results|
+|id|string|Transaction id|
+|blockId|string|Block id|
+|type|int|Transaction type|
+|version|int|Transaction version|
+|senderPublicKey|string|Sender public key|
+|senderId|string|Sender address|
+|recipientId|string|Recipient address|
+|ownerId|string|...|
+|vendorFieldHex|string|...|
+|timestamp|object|Timestamp|
+|timestamp.from|int|Seconds in epoch time|
+|timestamp.to|int|Seconds in epoch time|
+|amount|object|Amount|
+|amount.from|int|Amount in satoshis|
+|amount.to|int|Amount in satoshis|
+|fee|object|Fee|
+|fee.from|int|Fee in satoshis|
+|fee.to|int|Fee in satoshis|
             
 **Returns**  
 array of transaction objects
@@ -455,9 +499,11 @@ List of fees incurred for each type of transaction
 solarApi.listVotes(page, limit, orderBy)
 
 **Inputs**  
-page		int			The number of the page that will be returned.
-limit		int			The number of resources per page.
-orderBy		string		The column by which the resources will be sorted.
+|Name|Type|Description|
+|----|-----|-------| 
+|page|int|The number of the page that will be returned.|
+|limit|int|The number of resources per page.|
+|orderBy|string|The column by which the resources will be sorted.|
             
 **Returns**  
 array of vote transactions
@@ -467,7 +513,9 @@ array of vote transactions
 solarApi.getVoteByID(id)
 
 **Inputs**  
-id		string		Transaction id of the vote to be retrieved
+|Name|Type|Description|
+|----|-----|-------| 
+|id|string|Transaction id of the vote to be retrieved|
 
 **Returns**  
 vote transaction object
@@ -477,9 +525,11 @@ vote transaction object
 solarApi.listWallets(page, limit, orderBy)
 
 **Inputs**  
-page		int			The number of the page that will be returned.
-limit		int			The number of resources per page.
-orderBy		string		The column by which the resources will be sorted.
+|Name|Type|Description|
+|----|-----|-------| 
+|page|int|The number of the page that will be returned.|
+|limit|int|The number of resources per page.|
+|orderBy|string|The column by which the resources will be sorted.|
       
 The orderBy parameter supports the following values: address, balance, username, vote
  
@@ -491,7 +541,9 @@ array of wallet objects
 solarApi.getWalletByID(id)
 
 **Inputs**  
-id		string		Address or public key of wallet
+|Name|Type|Description|
+|----|-----|-------| 
+|id|string|Address or public key of wallet|
 
 **Returns**  
 wallet information object
@@ -501,7 +553,9 @@ wallet information object
 solarApi.getWalletBalance(id)
 
 **Inputs**  
-id		string		Address or public key of wallet
+|Name|Type|Description|
+|----|-----|-------| 
+|id|string|Address or public key of wallet|
 
 **Returns**  
 Balance in human readable form (ie. NOT in satoshis, but in decimal format)
@@ -511,9 +565,11 @@ Balance in human readable form (ie. NOT in satoshis, but in decimal format)
 solarApi.getWalletTransactions(id, page, limit)
 
 **Inputs**  
-id (REQUIRED)	string		The identifier of the wallet to be retrieved (either publicKey or address)
-page			int			The number of the page that will be returned.
-limit			int			The number of resources per page.
+|Name|Type|Description|
+|----|-----|-------| 
+|id|string|(REQUIRED) The identifier of the wallet to be retrieved (either publicKey or address)|
+|page|int|The number of the page that will be returned.|
+|limit|int|The number of resources per page.|
             
 **Returns**  
 Array of transaction objects
@@ -523,9 +579,11 @@ Array of transaction objects
 solarApi.getWalletReceivedTransactions(id, page, limit)
 
 **Inputs**  
-id (REQUIRED)	string		The identifier of the wallet to be retrieved (either publicKey or address)
-page			int			The number of the page that will be returned.
-limit			int			The number of resources per page.
+|Name|Type|Description|
+|----|-----|-------| 
+|id|string|(REQUIRED) The identifier of the wallet to be retrieved (either publicKey or address)|
+|page|int|The number of the page that will be returned.|
+|limit|int|The number of resources per page.|
             
 **Returns**  
 Array of transaction objects
@@ -535,9 +593,11 @@ Array of transaction objects
 solarApi.getWalletSentTransactions(id, page, limit)
 
 **Inputs**  
-id (REQUIRED)	string		The identifier of the wallet to be retrieved (either publicKey or address)
-page			int			The number of the page that will be returned.
-limit			int			The number of resources per page.
+|Name|Type|Description|
+|----|-----|-------| 
+|id|string|(REQUIRED) The identifier of the wallet to be retrieved (either publicKey or address)
+|page|int|The number of the page that will be returned.|
+|limit|int|The number of resources per page.|
             
 **Returns**  
 Array of transaction objects
@@ -547,9 +607,11 @@ Array of transaction objects
 solarApi.getWalletVotes(id, page, limit)
 
 **Inputs**  
-id (REQUIRED)	string		The identifier of the wallet to be retrieved (either publicKey or address)
-page			int			The number of the page that will be returned.
-limit			int			The number of resources per page.
+|Name|Type|Description|
+|----|-----|-------| 
+|id|string|(REQUIRED) The identifier of the wallet to be retrieved (either publicKey or address)|
+|page|int|The number of the page that will be returned.|
+|limit|int|The number of resources per page.|
             
 **Returns**  
 Array of vote transaction objects
@@ -559,8 +621,10 @@ Array of vote transaction objects
 solarApi.getTopWallets(page, limit)
 
 **Inputs**  
-page		int			The number of the page that will be returned.
-limit		int			The number of resources per page.
+|Name|Type|Description|
+|----|-----|-------| 
+|page|int|The number of the page that will be returned.|
+|limit|int|The number of resources per page.|
             
 **Returns**  
 array of wallet objects
@@ -570,22 +634,26 @@ array of wallet objects
 solarApi.searchWallets(page, limit, body)
 
 **Inputs**  
-page			int			The number of the page that will be returned.
-limit			int			The number of resources per page.
+|Name|Type|Description|
+|----|-----|-------| 
+|page|int|The number of the page that will be returned.|
+|limit|int|The number of resources per page.|
 
 ** body is a json object
 
-address				string		Address to search
-publicKey			string		public key to search
-secondPublicKey		string		Second public key
-vote				string		Voting for which delegate
-username			string		Username, if set
-balance				object		Balance
-balance.from		int			Amount in satoshis
-balance.to			int			Amount in satoshis
-votebalance			object		Amount
-votebalance.from	int			Amount in satoshis
-votebalance.to		int			Amount in satoshis
+|Name|Type|Description|
+|----|-----|-------| 
+|address|string|Address to search|
+|publicKey|string|public key to search|
+|secondPublicKey|string|Second public key|
+|vote|string|Voting for which delegate|
+|username|string|Username, if set|
+|balance|object|Balance|
+|balance.from|int|Amount in satoshis|
+|balance.to|int|Amount in satoshis|
+|votebalance|object|Amount|
+|votebalance.from|int|Amount in satoshis|
+|votebalance.to|int|Amount in satoshis|
             
 **Returns**  
 Array of wallet objects
@@ -593,3 +661,228 @@ Array of wallet objects
 
 
 ## Solar SLP1 Api Methods (solarSlp1)
+
+## getStatus
+**Method**  
+solarSlp1.getStatus()
+      
+**Returns**  
+Status object of connected node
+
+
+## getPeerInfo
+**Method**  
+solarSlp1.getPeerInfo()
+       
+**Returns**  
+Peer information object of connected node
+
+## listTokens
+**Method**  
+solarSlp1.getPeerInfo()
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## getToken
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## getTokenWithMeta
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## getTokenIdByTxid
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## getTokensByOwner
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## listAddresses
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## getAddress
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## getAddressesByTokenId
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## getBalance
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## listTransactions
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## getTransaction
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## listTokenTransactions
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## listTokenAddressTransactions
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## generateToken
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## mintToken
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## burnToken
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## sendToken
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## pauseToken
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## resumeToken
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+## newTokenOwner
+**Method**  
+solarSlp1.
+       
+**Inputs**  
+
+
+**Returns**  
+Peer information object of connected node
+
+
+
+
+## Solar SLP2 Api Methods (solarSlp2)
+
+
+
+
+
