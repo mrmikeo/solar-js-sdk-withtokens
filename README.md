@@ -44,7 +44,7 @@ const solarSlp1 = new solarSdk.solarSlp1Api(solarApi, 'https://slp.testnet.sh/ap
 Jump To [solarApi Methods](#solar-api-methods-solarapi)  
 Jump To [solarSlp1 Methods](#solar-slp1-api-methods-solarslp1)  
 Jump To [solarSlp2 Methods](#solar-slp2-api-methods-solarslp2)  
-Jump To [Common JSON Objects](#common-json-objects)  
+Jump To [Common JSON Objects](#common-json-object-types)  
 
 # Solar Api Methods (solarApi)
 
@@ -131,7 +131,7 @@ solarApi.listBlocks(page, limit, id, height, orderBy)
 The orderBy parameter supports the following values: id, height, previous_block, payload_hash, generator_public_key, timestamp
 
 **Returns**  
-Array of block objects
+Array of [Block Objects](#block-object)
 
 ## getBlockByHeight
 **Method**  
@@ -143,7 +143,7 @@ solarApi.getBlockByHeight(height)
 |height|int|block height to retrieve information for|
 
 **Returns**  
-block object
+[Block Object](#block-object)
 
 ## getBlockByID
 **Method**  
@@ -155,14 +155,14 @@ solarApi.getBlockByID(id)
 |id|string|block id to retrieve information for|
 
 **Returns**  
-block object
+[Block Object](#block-object)
 
 ## getLastBlock
 **Method**  
 solarApi.getLastBlock()
 
 **Returns**  
-block object of last created block
+[Block Object](#block-object) of last created block
 
 ## getTransactionsByBlockID
 **Method**  
@@ -174,7 +174,7 @@ solarApi.getTransactionsByBlockID(id)
 |id|string|block id to retrieve transaction list from|
 
 **Returns**  
-array of transaction objects
+array of [Transaction Objects](#transaction-object)
 
 ## searchBlocks
 **Method**  
@@ -219,7 +219,7 @@ body is a json object which can contain any of the following:
 |payloadLength.to|int|Block payload length must be smaller or equal to this.  |
             
 **Returns**  
-array of matching block objects
+array of matching [Block Object](#block-object)
 
 ## listDelegates
 **Method**  
@@ -261,7 +261,7 @@ solarApi.getDelegateBlocks(identifier, page, limit)
 |identifier|string|(REQUIRED) {username|address|publicKey}|
             
 **Returns**  
-array of matching block objects
+array of matching [Block Object](#block-object)
 
 ## getDelegateVoters
 **Method**  
@@ -404,7 +404,7 @@ solarApi.getTransactionByID(id)
 |id|string|Transaction ID to retrieve|
 
 **Returns**  
-transaction object
+[Transaction Object](#transaction-object)
 
 ## listTransactions
 **Method**  
@@ -423,7 +423,7 @@ solarApi.listTransactions(page, limit, type, blockId, id, orderBy)
 The orderBy parameter supports the following values: id, block_id, type, version, timestamp, amount, fee
             
 **Returns**  
-array of matching transaction objects
+array of matching [Transaction Objects](#transaction-object)
 
 ## listUnconfirmedTransactions
 **Method**  
@@ -436,7 +436,7 @@ solarApi.listUnconfirmedTransactions(page, limit)
 |limit|int|The number of resources per page.|
             
 **Returns**  
-array of unconfirmed transaction objects
+array of unconfirmed [Transaction Objects](#transaction-object)
 
 ## getUnconfirmedTransactionByID
 **Method**  
@@ -448,7 +448,7 @@ solarApi.getUnconfirmedTransactionByID(id)
 |id|string|The transaction id.|
 
 **Returns**  
-transaction object
+[Transaction Object](#transaction-object)
 
 ## searchTransactions
 **Method**  
@@ -485,7 +485,7 @@ body is a json object containing any of the following:
 |fee.to|int|Fee in satoshis|
             
 **Returns**  
-array of transaction objects
+array of [Transaction Objects](#transaction-object)
 
 ## getTransactionTypes
 **Method**  
@@ -513,7 +513,7 @@ solarApi.listVotes(page, limit, orderBy)
 |orderBy|string|The column by which the resources will be sorted.|
             
 **Returns**  
-array of vote transactions
+array of vote [Transaction Objects](#transaction-object)
 
 ## getVoteByID
 **Method**  
@@ -525,7 +525,7 @@ solarApi.getVoteByID(id)
 |id|string|Transaction id of the vote to be retrieved|
 
 **Returns**  
-vote transaction object
+vote [Transaction Object](#transaction-object)
 
 ## listWallets
 **Method**  
@@ -579,7 +579,7 @@ solarApi.getWalletTransactions(id, page, limit)
 |limit|int|The number of resources per page.|
             
 **Returns**  
-Array of transaction objects
+Array of [Transaction Objects](#transaction-object)
 
 ## getWalletReceivedTransactions
 **Method**  
@@ -593,7 +593,7 @@ solarApi.getWalletReceivedTransactions(id, page, limit)
 |limit|int|The number of resources per page.|
             
 **Returns**  
-Array of transaction objects
+Array of [Transaction Objects](#transaction-object)
 
 ## getWalletSentTransactions
 **Method**  
@@ -607,7 +607,7 @@ solarApi.getWalletSentTransactions(id, page, limit)
 |limit|int|The number of resources per page.|
             
 **Returns**  
-Array of transaction objects
+Array of [Transaction Objects](#transaction-object)
 
 ## getWalletVotes
 **Method**  
@@ -621,7 +621,7 @@ solarApi.getWalletVotes(id, page, limit)
 |limit|int|The number of resources per page.|
             
 **Returns**  
-Array of vote transaction objects
+Array of vote [Transaction Objects](#transaction-object)
 
 ## getTopWallets
 **Method**  
@@ -666,7 +666,6 @@ solarApi.searchWallets(page, limit, body)
 Array of wallet objects
 
 
-
 ## Solar SLP1 Api Methods (solarSlp1)
 
 ## getStatus
@@ -686,203 +685,288 @@ Peer information object of connected node
 
 ## listTokens
 **Method**  
-solarSlp1.getPeerInfo()
+solarSlp1.listTokens(limit, page)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|limit|int|How many results to display, default 100|
+|page|int|Page number to display, default 1|
 
 **Returns**  
-Peer information object of connected node
+Array of token information objects
 
 ## getToken
 **Method**  
-solarSlp1.
+solarSlp1.getToken(tokenId)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|tokenId|string|token identification code|
 
 **Returns**  
-Peer information object of connected node
+Token information object
 
 ## getTokenWithMeta
 **Method**  
-solarSlp1.
+solarSlp1.getTokenWithMeta(tokenId)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|tokenId|string|token identification code|
 
 **Returns**  
-Peer information object of connected node
+Token with Meta information object
 
 ## getTokenIdByTxid
 **Method**  
-solarSlp1.
+solarSlp1.getTokenIdByTxid(transactionId)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|transactionId|string|transaction identifier|
 
 **Returns**  
-Peer information object of connected node
+Token information object
 
 ## getTokensByOwner
 **Method**  
-solarSlp1.
+solarSlp1.getTokensByOwner(address, limit, page)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|address|string|Solar token address to query|
+|limit|int|How many results to display, default 100|
+|page|int|Page number to display, default 1|
 
 **Returns**  
-Peer information object of connected node
+Array of token information objects
 
 ## listAddresses
 **Method**  
-solarSlp1.
+solarSlp1.listAddresses(limit, page)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|limit|int|How many results to display, default 100|
+|page|int|Page number to display, default 1|
 
 **Returns**  
-Peer information object of connected node
+Array of token address objects
 
 ## getAddress
 **Method**  
-solarSlp1.
+solarSlp1.getAddress(address)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|address|string|Solar token address to query|
 
 **Returns**  
-Peer information object of connected node
+Token address object
 
 ## getAddressesByTokenId
 **Method**  
-solarSlp1.
+solarSlp1.getAddressesByTokenId(tokenId, limit, page)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|tokenId|string|Token identifier to query|
+|limit|int|How many results to display, default 100|
+|page|int|Page number to display, default 1|
 
 **Returns**  
-Peer information object of connected node
+Array of token address objects
 
 ## getBalance
 **Method**  
-solarSlp1.
+solarSlp1.getBalance(tokenId, address)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|tokenId|string|Token identifier to query|
+|address|string|Solar token address to query|
 
 **Returns**  
-Peer information object of connected node
+Human readable balance for token at address
 
 ## listTransactions
 **Method**  
-solarSlp1.
+solarSlp1.listTransactions(limit, page)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|limit|int|How many results to display, default 100|
+|page|int|Page number to display, default 1|
 
 **Returns**  
-Peer information object of connected node
+Array of token transaction objects
 
 ## getTransaction
 **Method**  
-solarSlp1.
+solarSlp1.getTransaction(transactionId)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|transactionId|string|transaction identifier|
 
 **Returns**  
-Peer information object of connected node
+Token transaction object
 
 ## listTokenTransactions
 **Method**  
-solarSlp1.
+solarSlp1.listTokenTransactions(tokenId, limit, page)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|tokenId|string|Token identifier to query|
+|limit|int|How many results to display, default 100|
+|page|int|Page number to display, default 1|
 
 **Returns**  
-Peer information object of connected node
+Array of token transaction objects
 
 ## listTokenAddressTransactions
 **Method**  
-solarSlp1.
+solarSlp1.listTokenAddressTransactions(tokenId, address, limit, page)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|tokenId|string|Token identifier to query|
+|address|string|Solar token address to query|
+|limit|int|How many results to display, default 100|
+|page|int|Page number to display, default 1|
 
 **Returns**  
-Peer information object of connected node
+Array of token transaction objects
 
 ## generateToken
 **Method**  
-solarSlp1.
+solarSlp1.generateToken(passPhrase, secondPassphrase, tokenName, tokenTicker, tokenQuantity, tokenDecimals, tokenUri, tokenNote, tokenPausable, tokenMintable)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|passPhrase|string|Mnemonic passphrase for account|
+|secondPassphrase|string|Second Mnemonic passphrase for account (if enabled, else put null)|
+|tokenName|string|The name of your token|
+|tokenTicker|string|The ticker code for your token|
+|tokenQuantity|string|Human readable quantity including decimals|
+|tokenDecimals|int|Number of decimal placess your token has|
+|tokenUri|string|Can be used for any string data, but generally URL is used|
+|tokenNote|string|Any transaction notes for the genesis|
+|tokenPausable|bool|Is this token pausable?|
+|tokenMintable|bool|Is this token mintable?|
 
 **Returns**  
-Peer information object of connected node
+Transaction id
 
 ## mintToken
 **Method**  
-solarSlp1.
+solarSlp1.mintToken(passPhrase, secondPassphrase, tokenId, mintQuantity, transactionNote)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|passPhrase|string|Mnemonic passphrase for account|
+|secondPassphrase|string|Second Mnemonic passphrase for account (if enabled, else put null)|
+|tokenId|string|Token identifier to query|
+|mintQuantity|string|Human readable quantity to mint, including decimals|
+|transactionNote|string|Any transaction notes|
 
 **Returns**  
-Peer information object of connected node
+Transaction id
 
 ## burnToken
 **Method**  
-solarSlp1.
+solarSlp1.burnToken(passPhrase, secondPassphrase, tokenId, burnQuantity, transactionNote)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|passPhrase|string|Mnemonic passphrase for account|
+|secondPassphrase|string|Second Mnemonic passphrase for account (if enabled, else put null)|
+|tokenId|string|Token identifier to query|
+|burnQuantity|string|Human readable quantity to burn, including decimals|
+|transactionNote|string|Any transaction notes|
 
 **Returns**  
-Peer information object of connected node
+Transaction id
 
 ## sendToken
 **Method**  
-solarSlp1.
+solarSlp1.sendToken(passPhrase, secondPassphrase, tokenId, toAddress, sendQuantity, transactionNote)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|passPhrase|string|Mnemonic passphrase for account|
+|secondPassphrase|string|Second Mnemonic passphrase for account (if enabled, else put null)|
+|tokenId|string|Token identifier to query|
+|toAddress|string|Solar token address to send to|
+|sendQuantity|string|Human readable quantity to send, including decimals|
+|transactionNote|string|Any transaction notes|
 
 **Returns**  
-Peer information object of connected node
+Transaction id
 
 ## pauseToken
 **Method**  
-solarSlp1.
+solarSlp1.pauseToken(passPhrase, secondPassphrase, tokenId, transactionNote)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|passPhrase|string|Mnemonic passphrase for account|
+|secondPassphrase|string|Second Mnemonic passphrase for account (if enabled, else put null)|
+|tokenId|string|Token identifier to query|
+|transactionNote|string|Any transaction notes|
 
 **Returns**  
-Peer information object of connected node
+Transaction id
 
 ## resumeToken
 **Method**  
-solarSlp1.
+solarSlp1.resumeToken(passPhrase, secondPassphrase, tokenId, transactionNote)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|passPhrase|string|Mnemonic passphrase for account|
+|secondPassphrase|string|Second Mnemonic passphrase for account (if enabled, else put null)|
+|tokenId|string|Token identifier to query|
+|transactionNote|string|Any transaction notes|
 
 **Returns**  
-Peer information object of connected node
+Transaction id
 
 ## newTokenOwner
 **Method**  
-solarSlp1.
+solarSlp1.newTokenOwner(passPhrase, secondPassphrase, tokenId, newOwnerAddress, transactionNote)
        
 **Inputs**  
-
+|Name|Type|Description|
+|----|-----|-------| 
+|passPhrase|string|Mnemonic passphrase for account|
+|secondPassphrase|string|Second Mnemonic passphrase for account (if enabled, else put null)|
+|tokenId|string|Token identifier to query|
+|newOwnerAddress|string|Solar token address of the new owner of token|
+|transactionNote|string|Any transaction notes|
 
 **Returns**  
-Peer information object of connected node
+Transaction id
 
 
 
@@ -894,36 +978,60 @@ Peer information object of connected node
 
 # Common JSON Object Types
 
-## Block
+## Block Object
 ```
 {	
-	id:"6e3784bed06b5c1581d5b78787ac587e1396ff58a2acef4d4b713f50ccea4cbe"
-	version:0
-	height:569534
-	previous:"73b17a8a6043798b47df07780466f992727753f4b9091149c16e6c8b2bdea97a"
+	id:"6e3784bed06b5c1581d5b78787ac587e1396ff58a2acef4d4b713f50ccea4cbe",
+	version:0,
+	height:569534,
+	previous:"73b17a8a6043798b47df07780466f992727753f4b9091149c16e6c8b2bdea97a",
 	forged: {
-		reward:"1162500000"
-		fee:"0"
-		amount:"0"
-		total:"1162500000"
-	}
+		reward:"1162500000",
+		fee:"0",
+		amount:"0",
+		total:"1162500000",
+	},
 	payload: {
-		hash:"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+		hash:"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
 		length:0
-	}
+	},
 	generator: {	
-		username:"beta106"
-		address:"D9DGVfuoyLWkG7h2iH8HnWM3kFTd28H3cp"
+		username:"beta106",
+		address:"D9DGVfuoyLWkG7h2iH8HnWM3kFTd28H3cp",
 		publicKey:"021ea11edbe1d10af043c4bb17506d4ed623ab05eb042d6ba40c8da06e5cbd7405"
-	}
-	signature:"3044022066a163bfaa2385cf86c6cf8adbabf4126ea77cb66feb761430a52a91928ff2c4022040e09563400f54f8a69136f842567d6c646d4d87a9d9fa7e428583c63e3985b4"
-	confirmations:1
-	transactions:0
+	},
+	signature:"3044022066a163bfaa2385cf86c6cf8adbabf4126ea77cb66feb761430a52a91928ff2c4022040e09563400f54f8a69136f842567d6c646d4d87a9d9fa7e428583c63e3985b4",
+	confirmations:1,
+	transactions:0,
 	timestamp: {
-		epoch:5205688
-		unix:1645423288
+		epoch:5205688,
+		unix:1645423288,
 		human:"2022-02-21T06:01:28.000Z"
 	}
 }
 ```
 
+## Transaction Object
+```
+{
+	id:"b759389e6010759abf0c9c0f7b8762529f072997e6595ef46921b48dac7d2eb5",
+	blockId:"cf2c33b24ae8ea1a96128c4b3b2f2e80030588bb6c2d2408a496e200c9d6da7a",
+	version:2,
+	type:0,
+	typeGroup:1,
+	amount:"10000000000",
+	fee:"1000000",
+	sender:"D5YUm8iAiZiNCMo8boPKa94x4t1QNVQwDf",
+	senderPublicKey:"0347163bcaeac803c552f36f55c0353e4c90e05788bcf0204ad27c8291243ae5be",
+	recipient:"DCLu9eSjTtbrb7wBXHvneVz4mFbHzFnj7m",
+	signature:"06f82ebf4750cb7f347da853968432f688741c2cb0de18516faf4feec9b837ee9885b835eb74012c976c222748bb7408d9b49fc48399489cbebf7dc8f402f0bd",
+	vendorField:"friendsoflittleyus telegram faucet",
+	confirmations:2068,
+	timestamp: {
+		epoch:5201832,
+		unix:1645419432,
+		human:"2022-02-21T04:57:12.000Z"
+	},
+	nonce:"620"
+}
+```
