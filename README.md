@@ -50,7 +50,7 @@ Jump To [Common JSON Objects](#common-json-object-types)
 
 ## getNewAddress
 **Method**  
-solarApi.getNewAddress()
+`solarApi.getNewAddress()`
 
 **Returns**  
 New Address Object:
@@ -65,17 +65,19 @@ New Address Object:
 
 ## validateAddress
 **Method**  
-solarApi.validateAddress(address)
+`solarApi.validateAddress(address)`
 
 **Inputs**  
-address: Solar address to validate
+|Name|Type|Description|
+|----|-----|-------| 
+|address|string|Solar address to validate  |
 
 **Returns**  
 true, false, or error (false)
 
 ## buildTransaction
 **Method**  
-solarApi.buildTransaction(receiverAddress, amount, memo, passPhrase, secondPassphrase = null, feeOverride = null)
+`solarApi.buildTransaction(receiverAddress, amount, memo, passPhrase, secondPassphrase = null, feeOverride = null)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -92,14 +94,14 @@ signed transaction object
 
 ## getApiUrl
 **Method**  
-solarApi.getApiUrl()
+`solarApi.getApiUrl()`
 
 **Returns**  
 Current endpoint url, such as "https://sxp.mainnet.sh/api"
 
 ## getBlockChain
 **Method**  
-solarApi.getBlockChain()
+`solarApi.getBlockChain()`
 
 **Returns**  
 General blockchain information:
@@ -117,7 +119,7 @@ General blockchain information:
 
 ## listBlocks
 **Method**  
-solarApi.listBlocks(page, limit, id, height, orderBy)
+`solarApi.listBlocks(page, limit, id, height, orderBy)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -135,7 +137,7 @@ Array of [Block Objects](#block-object)
 
 ## getBlockByHeight
 **Method**  
-solarApi.getBlockByHeight(height)
+`solarApi.getBlockByHeight(height)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -147,7 +149,7 @@ solarApi.getBlockByHeight(height)
 
 ## getBlockByID
 **Method**  
-solarApi.getBlockByID(id)
+`solarApi.getBlockByID(id)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -159,14 +161,14 @@ solarApi.getBlockByID(id)
 
 ## getLastBlock
 **Method**  
-solarApi.getLastBlock()
+`solarApi.getLastBlock()`
 
 **Returns**  
 [Block Object](#block-object) of last created block
 
 ## getTransactionsByBlockID
 **Method**  
-solarApi.getTransactionsByBlockID(id)
+`solarApi.getTransactionsByBlockID(id)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -178,7 +180,7 @@ array of [Transaction Objects](#transaction-object)
 
 ## searchBlocks
 **Method**  
-solarApi.searchBlocks(page, limit, body)
+`solarApi.searchBlocks(page, limit, body)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -223,7 +225,7 @@ array of matching [Block Object](#block-object)
 
 ## listDelegates
 **Method**  
-solarApi.listDelegates(page, limit, orderBy)
+`solarApi.listDelegates(page, limit, orderBy)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -239,7 +241,7 @@ array of delegate objects
 
 ## getDelegate
 **Method**  
-solarApi.getDelegate(identifier)
+`solarApi.getDelegate(identifier)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -251,7 +253,7 @@ delegate object
 
 ## getDelegateBlocks
 **Method**  
-solarApi.getDelegateBlocks(identifier, page, limit)
+`solarApi.getDelegateBlocks(identifier, page, limit)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -265,7 +267,7 @@ array of matching [Block Object](#block-object)
 
 ## getDelegateVoters
 **Method**  
-solarApi.getDelegateVoters = function(identifier, page, limit)
+`solarApi.getDelegateVoters = function(identifier, page, limit)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -279,7 +281,7 @@ array of voter objects
 
 ## searchDelegates
 **Method**  
-solarApi.searchDelegates(page, limit, body)
+`solarApi.searchDelegates(page, limit, body)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -319,42 +321,42 @@ array of matching delegate objects
 
 ## getNodeConfig
 **Method**  
-solarApi.getNodeConfig()
+`solarApi.getNodeConfig()`
 
 **Returns**  
 node configuration object
 
 ## getNodeCryptoConfig
 **Method**  
-solarApi.getNodeCryptoConfig
+`solarApi.getNodeCryptoConfig`
 
 **Returns**  
 node crypto configuration object
 
 ## getNodeFeeStats
 **Method**  
-solarApi..getNodeFeeStats()
+`solarApi..getNodeFeeStats()`
 
 **Returns**  
 fee statistics object
 
 ## getNodeStatus
 **Method**  
-solarApi.getNodeStatus()
+`solarApi.getNodeStatus()`
 
 **Returns**  
 node status object
 
 ## getNodeSyncStatus
 **Method**  
-solarApi.getNodeSyncStatus()
+`solarApi.getNodeSyncStatus()`
 
 **Returns**  
 node sync status information
 
 ## getPeers
 **Method**  
-solarApi.getPeers(page, limit, port, status, os, version, orderBy)
+`solarApi.getPeers(page, limit, port, status, os, version, orderBy)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -372,7 +374,7 @@ array of peer objects
 
 ## getPeerByIP
 **Method**  
-solarApi.getPeerByIP(ip)
+`solarApi.getPeerByIP(ip)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -384,7 +386,7 @@ peer object
 
 ## createTransaction
 **Method**  
-solarApi.createTransaction(transactions)
+`solarApi.createTransaction(transactions)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -396,7 +398,7 @@ transaction result object
 
 ## getTransactionByID
 **Method**  
-solarApi.getTransactionByID(id)
+`solarApi.getTransactionByID(id)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -408,7 +410,7 @@ solarApi.getTransactionByID(id)
 
 ## listTransactions
 **Method**  
-solarApi.listTransactions(page, limit, type, blockId, id, orderBy)
+`solarApi.listTransactions(page, limit, type, blockId, id, orderBy)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -427,7 +429,7 @@ array of matching [Transaction Objects](#transaction-object)
 
 ## listUnconfirmedTransactions
 **Method**  
-solarApi.listUnconfirmedTransactions(page, limit)
+`solarApi.listUnconfirmedTransactions(page, limit)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -440,7 +442,7 @@ array of unconfirmed [Transaction Objects](#transaction-object)
 
 ## getUnconfirmedTransactionByID
 **Method**  
-solarApi.getUnconfirmedTransactionByID(id)
+`solarApi.getUnconfirmedTransactionByID(id)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -452,7 +454,7 @@ solarApi.getUnconfirmedTransactionByID(id)
 
 ## searchTransactions
 **Method**  
-solarApi.searchTransactions(page, limit, body)
+`solarApi.searchTransactions(page, limit, body)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -489,21 +491,21 @@ array of [Transaction Objects](#transaction-object)
 
 ## getTransactionTypes
 **Method**  
-solarApi.getTransactionTypes()
+`solarApi.getTransactionTypes()`
 
 **Returns**  
 list of available transaction types
 
 ## getTransactionFees
 **Method**  
-solarApi.getTransactionFees()
+`solarApi.getTransactionFees()`
 
 **Returns**  
 List of fees incurred for each type of transaction
 
 ## listVotes
 **Method**  
-solarApi.listVotes(page, limit, orderBy)
+`solarApi.listVotes(page, limit, orderBy)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -517,7 +519,7 @@ array of vote [Transaction Objects](#transaction-object)
 
 ## getVoteByID
 **Method**  
-solarApi.getVoteByID(id)
+`solarApi.getVoteByID(id)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -529,7 +531,7 @@ vote [Transaction Object](#transaction-object)
 
 ## listWallets
 **Method**  
-solarApi.listWallets(page, limit, orderBy)
+`solarApi.listWallets(page, limit, orderBy)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -545,7 +547,7 @@ array of wallet objects
 
 ## getWalletByID
 **Method**  
-solarApi.getWalletByID(id)
+`solarApi.getWalletByID(id)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -557,7 +559,7 @@ wallet information object
 
 ## getWalletBalance
 **Method**  
-solarApi.getWalletBalance(id)
+`solarApi.getWalletBalance(id)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -569,7 +571,7 @@ Balance in human readable form (ie. NOT in satoshis, but in decimal format)
 
 ## getWalletTransactions
 **Method**  
-solarApi.getWalletTransactions(id, page, limit)
+`solarApi.getWalletTransactions(id, page, limit)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -583,7 +585,7 @@ Array of [Transaction Objects](#transaction-object)
 
 ## getWalletReceivedTransactions
 **Method**  
-solarApi.getWalletReceivedTransactions(id, page, limit)
+`solarApi.getWalletReceivedTransactions(id, page, limit)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -597,7 +599,7 @@ Array of [Transaction Objects](#transaction-object)
 
 ## getWalletSentTransactions
 **Method**  
-solarApi.getWalletSentTransactions(id, page, limit)
+`solarApi.getWalletSentTransactions(id, page, limit)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -611,7 +613,7 @@ Array of [Transaction Objects](#transaction-object)
 
 ## getWalletVotes
 **Method**  
-solarApi.getWalletVotes(id, page, limit)
+`solarApi.getWalletVotes(id, page, limit)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -625,7 +627,7 @@ Array of vote [Transaction Objects](#transaction-object)
 
 ## getTopWallets
 **Method**  
-solarApi.getTopWallets(page, limit)
+`solarApi.getTopWallets(page, limit)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -638,7 +640,7 @@ array of wallet objects
 
 ## searchWallets
 **Method**  
-solarApi.searchWallets(page, limit, body)
+`solarApi.searchWallets(page, limit, body)`
 
 **Inputs**  
 |Name|Type|Description|
@@ -670,7 +672,7 @@ Array of wallet objects
 
 ## getStatus
 **Method**  
-solarSlp1.getStatus()
+`solarSlp1.getStatus()`
       
 **Returns**  
 Status object of connected node
@@ -678,14 +680,14 @@ Status object of connected node
 
 ## getPeerInfo
 **Method**  
-solarSlp1.getPeerInfo()
+`solarSlp1.getPeerInfo()`
        
 **Returns**  
 Peer information object of connected node
 
 ## listTokens
 **Method**  
-solarSlp1.listTokens(limit, page)
+`solarSlp1.listTokens(limit, page)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -698,7 +700,7 @@ Array of token information objects
 
 ## getToken
 **Method**  
-solarSlp1.getToken(tokenId)
+`solarSlp1.getToken(tokenId)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -710,7 +712,7 @@ Token information object
 
 ## getTokenWithMeta
 **Method**  
-solarSlp1.getTokenWithMeta(tokenId)
+`solarSlp1.getTokenWithMeta(tokenId)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -722,7 +724,7 @@ Token with Meta information object
 
 ## getTokenIdByTxid
 **Method**  
-solarSlp1.getTokenIdByTxid(transactionId)
+`solarSlp1.getTokenIdByTxid(transactionId)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -734,7 +736,7 @@ Token information object
 
 ## getTokensByOwner
 **Method**  
-solarSlp1.getTokensByOwner(address, limit, page)
+`solarSlp1.getTokensByOwner(address, limit, page)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -748,7 +750,7 @@ Array of token information objects
 
 ## listAddresses
 **Method**  
-solarSlp1.listAddresses(limit, page)
+`solarSlp1.listAddresses(limit, page)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -761,7 +763,7 @@ Array of token address objects
 
 ## getAddress
 **Method**  
-solarSlp1.getAddress(address)
+`solarSlp1.getAddress(address)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -773,7 +775,7 @@ Token address object
 
 ## getAddressesByTokenId
 **Method**  
-solarSlp1.getAddressesByTokenId(tokenId, limit, page)
+`solarSlp1.getAddressesByTokenId(tokenId, limit, page)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -787,7 +789,7 @@ Array of token address objects
 
 ## getBalance
 **Method**  
-solarSlp1.getBalance(tokenId, address)
+`solarSlp1.getBalance(tokenId, address)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -800,7 +802,7 @@ Human readable balance for token at address
 
 ## listTransactions
 **Method**  
-solarSlp1.listTransactions(limit, page)
+`solarSlp1.listTransactions(limit, page)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -813,7 +815,7 @@ Array of token transaction objects
 
 ## getTransaction
 **Method**  
-solarSlp1.getTransaction(transactionId)
+`solarSlp1.getTransaction(transactionId)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -825,7 +827,7 @@ Token transaction object
 
 ## listTokenTransactions
 **Method**  
-solarSlp1.listTokenTransactions(tokenId, limit, page)
+`solarSlp1.listTokenTransactions(tokenId, limit, page)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -839,7 +841,7 @@ Array of token transaction objects
 
 ## listTokenAddressTransactions
 **Method**  
-solarSlp1.listTokenAddressTransactions(tokenId, address, limit, page)
+`solarSlp1.listTokenAddressTransactions(tokenId, address, limit, page)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -854,7 +856,7 @@ Array of token transaction objects
 
 ## generateToken
 **Method**  
-solarSlp1.generateToken(passPhrase, secondPassphrase, tokenName, tokenTicker, tokenQuantity, tokenDecimals, tokenUri, tokenNote, tokenPausable, tokenMintable)
+`solarSlp1.generateToken(passPhrase, secondPassphrase, tokenName, tokenTicker, tokenQuantity, tokenDecimals, tokenUri, tokenNote, tokenPausable, tokenMintable)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -875,7 +877,7 @@ Transaction id
 
 ## mintToken
 **Method**  
-solarSlp1.mintToken(passPhrase, secondPassphrase, tokenId, mintQuantity, transactionNote)
+`solarSlp1.mintToken(passPhrase, secondPassphrase, tokenId, mintQuantity, transactionNote)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -891,7 +893,7 @@ Transaction id
 
 ## burnToken
 **Method**  
-solarSlp1.burnToken(passPhrase, secondPassphrase, tokenId, burnQuantity, transactionNote)
+`solarSlp1.burnToken(passPhrase, secondPassphrase, tokenId, burnQuantity, transactionNote)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -907,7 +909,7 @@ Transaction id
 
 ## sendToken
 **Method**  
-solarSlp1.sendToken(passPhrase, secondPassphrase, tokenId, toAddress, sendQuantity, transactionNote)
+`solarSlp1.sendToken(passPhrase, secondPassphrase, tokenId, toAddress, sendQuantity, transactionNote)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -924,7 +926,7 @@ Transaction id
 
 ## pauseToken
 **Method**  
-solarSlp1.pauseToken(passPhrase, secondPassphrase, tokenId, transactionNote)
+`solarSlp1.pauseToken(passPhrase, secondPassphrase, tokenId, transactionNote)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -939,7 +941,7 @@ Transaction id
 
 ## resumeToken
 **Method**  
-solarSlp1.resumeToken(passPhrase, secondPassphrase, tokenId, transactionNote)
+`solarSlp1.resumeToken(passPhrase, secondPassphrase, tokenId, transactionNote)`
        
 **Inputs**  
 |Name|Type|Description|
@@ -954,7 +956,7 @@ Transaction id
 
 ## newTokenOwner
 **Method**  
-solarSlp1.newTokenOwner(passPhrase, secondPassphrase, tokenId, newOwnerAddress, transactionNote)
+`solarSlp1.newTokenOwner(passPhrase, secondPassphrase, tokenId, newOwnerAddress, transactionNote)`
        
 **Inputs**  
 |Name|Type|Description|
