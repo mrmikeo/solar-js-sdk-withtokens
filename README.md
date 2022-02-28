@@ -133,7 +133,7 @@ General blockchain information:
 The orderBy parameter supports the following values: id, height, previous_block, payload_hash, generator_public_key, timestamp
 
 **Returns**  
-Array of [Block Objects](#block-object)
+[Meta Object](#meta-object) with data field of: Array of [Block Objects](#block-object)
 
 ## getBlockByHeight
 **Method**  
@@ -145,7 +145,7 @@ Array of [Block Objects](#block-object)
 |height|int|block height to retrieve information for|
 
 **Returns**  
-[Block Object](#block-object)
+[Meta Object](#meta-object) with data field of: [Block Object](#block-object)
 
 ## getBlockByID
 **Method**  
@@ -157,14 +157,14 @@ Array of [Block Objects](#block-object)
 |id|string|block id to retrieve information for|
 
 **Returns**  
-[Block Object](#block-object)
+[Meta Object](#meta-object) with data field of: [Block Object](#block-object)
 
 ## getLastBlock
 **Method**  
 `solarApi.getLastBlock()`
 
 **Returns**  
-[Block Object](#block-object) of last created block
+[Meta Object](#meta-object) with data field of: [Block Object](#block-object) of last created block
 
 ## getTransactionsByBlockID
 **Method**  
@@ -176,7 +176,7 @@ Array of [Block Objects](#block-object)
 |id|string|block id to retrieve transaction list from|
 
 **Returns**  
-array of [Transaction Objects](#transaction-object)
+[Meta Object](#meta-object) with data field of: array of [Transaction Objects](#transaction-object)
 
 ## searchBlocks
 **Method**  
@@ -221,7 +221,7 @@ body is a json object which can contain any of the following:
 |payloadLength.to|int|Block payload length must be smaller or equal to this.  |
             
 **Returns**  
-array of matching [Block Object](#block-object)
+[Meta Object](#meta-object) with data field of: Array of matching [Block Object](#block-object)
 
 ## listDelegates
 **Method**  
@@ -237,7 +237,7 @@ array of matching [Block Object](#block-object)
 orderBy valid fields:  username, rank, votes
 
 **Returns**  
-array of delegate objects
+[Meta Object](#meta-object) with data field of: Array of [Delegate Objects](#delegate-object)
 
 ## getDelegate
 **Method**  
@@ -249,7 +249,7 @@ array of delegate objects
 |identifier|string|{username|address|publicKey}|
 
 **Returns**  
-delegate object
+[Meta Object](#meta-object) with data field of: [Delegate Object](#delegate-object)
 
 ## getDelegateBlocks
 **Method**  
@@ -263,7 +263,7 @@ delegate object
 |identifier|string|(REQUIRED) {username|address|publicKey}|
             
 **Returns**  
-array of matching [Block Object](#block-object)
+[Meta Object](#meta-object) with data field of: Array of matching [Block Object](#block-object)
 
 ## getDelegateVoters
 **Method**  
@@ -277,7 +277,7 @@ array of matching [Block Object](#block-object)
 |identifier|string|(REQUIRED) {username|address|publicKey}|
 
 **Returns**  
-array of voter objects
+[Meta Object](#meta-object) with data field of: Array of voter objects
 
 ## searchDelegates
 **Method**  
@@ -317,7 +317,7 @@ body is a json object which can contain any of the following:
 |voteBalance.to|int|The upper limit of the vote balance.|
             
 **Returns**  
-array of matching delegate objects
+[Meta Object](#meta-object) with data field of: Array of matching [Delegate Objects](#delegate-object)
 
 ## getNodeConfig
 **Method**  
@@ -370,7 +370,7 @@ node sync status information
 |orderBy|string|The column by which the resources will be sorted.|
             
 **Returns**  
-array of peer objects
+[Meta Object](#meta-object) with data field of: Array of [Peer Objects](#peer-object)
 
 ## getPeerByIP
 **Method**  
@@ -382,7 +382,7 @@ array of peer objects
 |ip|string|IP address of peer|
 
 **Returns**  
-peer object
+[Meta Object](#meta-object) with data field of: [Peer Object](#peer-object)
 
 ## createTransaction
 **Method**  
@@ -406,7 +406,7 @@ transaction result object
 |id|string|Transaction ID to retrieve|
 
 **Returns**  
-[Transaction Object](#transaction-object)
+[Meta Object](#meta-object) with data field of: [Transaction Object](#transaction-object)
 
 ## listTransactions
 **Method**  
@@ -425,7 +425,7 @@ transaction result object
 The orderBy parameter supports the following values: id, block_id, type, version, timestamp, amount, fee
             
 **Returns**  
-array of matching [Transaction Objects](#transaction-object)
+[Meta Object](#meta-object) with data field of: Array of matching [Transaction Objects](#transaction-object)
 
 ## listUnconfirmedTransactions
 **Method**  
@@ -438,7 +438,7 @@ array of matching [Transaction Objects](#transaction-object)
 |limit|int|The number of resources per page.|
             
 **Returns**  
-array of unconfirmed [Transaction Objects](#transaction-object)
+[Meta Object](#meta-object) with data field of: Array of unconfirmed [Transaction Objects](#transaction-object)
 
 ## getUnconfirmedTransactionByID
 **Method**  
@@ -450,7 +450,7 @@ array of unconfirmed [Transaction Objects](#transaction-object)
 |id|string|The transaction id.|
 
 **Returns**  
-[Transaction Object](#transaction-object)
+[Meta Object](#meta-object) with data field of: [Transaction Object](#transaction-object)
 
 ## searchTransactions
 **Method**  
@@ -487,7 +487,7 @@ body is a json object containing any of the following:
 |fee.to|int|Fee in satoshis|
             
 **Returns**  
-array of [Transaction Objects](#transaction-object)
+[Meta Object](#meta-object) with data field of: Array of [Transaction Objects](#transaction-object)
 
 ## getTransactionTypes
 **Method**  
@@ -515,7 +515,7 @@ List of fees incurred for each type of transaction
 |orderBy|string|The column by which the resources will be sorted.|
             
 **Returns**  
-array of vote [Transaction Objects](#transaction-object)
+[Meta Object](#meta-object) with data field of: Array of vote [Transaction Objects](#transaction-object)
 
 ## getVoteByID
 **Method**  
@@ -527,7 +527,7 @@ array of vote [Transaction Objects](#transaction-object)
 |id|string|Transaction id of the vote to be retrieved|
 
 **Returns**  
-vote [Transaction Object](#transaction-object)
+[Meta Object](#meta-object) with data field of: vote [Transaction Object](#transaction-object)
 
 ## listWallets
 **Method**  
@@ -543,7 +543,7 @@ vote [Transaction Object](#transaction-object)
 The orderBy parameter supports the following values: address, balance, username, vote
  
 **Returns**  
-array of wallet objects
+[Meta Object](#meta-object) with data field of: Array of [Wallet Objects](#wallet-object)
 
 ## getWalletByID
 **Method**  
@@ -555,7 +555,7 @@ array of wallet objects
 |id|string|Address or public key of wallet|
 
 **Returns**  
-wallet information object
+data field of: [Wallet Object](#wallet-object)
 
 ## getWalletBalance
 **Method**  
@@ -581,7 +581,7 @@ Balance in human readable form (ie. NOT in satoshis, but in decimal format)
 |limit|int|The number of resources per page.|
             
 **Returns**  
-Array of [Transaction Objects](#transaction-object)
+[Meta Object](#meta-object) with data field of: Array of [Transaction Objects](#transaction-object)
 
 ## getWalletReceivedTransactions
 **Method**  
@@ -595,7 +595,7 @@ Array of [Transaction Objects](#transaction-object)
 |limit|int|The number of resources per page.|
             
 **Returns**  
-Array of [Transaction Objects](#transaction-object)
+[Meta Object](#meta-object) with data field of: Array of [Transaction Objects](#transaction-object)
 
 ## getWalletSentTransactions
 **Method**  
@@ -609,7 +609,7 @@ Array of [Transaction Objects](#transaction-object)
 |limit|int|The number of resources per page.|
             
 **Returns**  
-Array of [Transaction Objects](#transaction-object)
+[Meta Object](#meta-object) with data field of: Array of [Transaction Objects](#transaction-object)
 
 ## getWalletVotes
 **Method**  
@@ -623,7 +623,7 @@ Array of [Transaction Objects](#transaction-object)
 |limit|int|The number of resources per page.|
             
 **Returns**  
-Array of vote [Transaction Objects](#transaction-object)
+[Meta Object](#meta-object) with data field of: Array of vote [Transaction Objects](#transaction-object)
 
 ## getTopWallets
 **Method**  
@@ -636,7 +636,7 @@ Array of vote [Transaction Objects](#transaction-object)
 |limit|int|The number of resources per page.|
             
 **Returns**  
-array of wallet objects
+[Meta Object](#meta-object) with data field of: Array of [Wallet Objects](#wallet-object)
 
 ## searchWallets
 **Method**  
@@ -665,7 +665,7 @@ array of wallet objects
 |votebalance.to|int|Amount in satoshis|
             
 **Returns**  
-Array of wallet objects
+[Meta Object](#meta-object) with data field of: Array of [Wallet Objects](#wallet-object)
 
 
 ## Solar SLP1 Api Methods (solarSlp1)
@@ -972,13 +972,28 @@ Transaction id
 
 
 
-
 # Solar SLP2 Api Methods (solarSlp2)
 
+**Not Yet Implemented**
 
 
 
 # Common JSON Object Types
+
+## Meta Object
+```
+{
+	totalCountIsEstimate: false,
+	count: 100,
+	pageCount: 2,
+	totalCount: 129,
+	next: "/delegates?page=2&limit=100",
+	previous: null,
+	self: "/delegates?page=1&limit=100",
+	first: "/delegates?page=1&limit=100",
+	last: "/delegates?page=2&limit=100"
+}
+```
 
 ## Block Object
 ```
@@ -1016,24 +1031,95 @@ Transaction id
 ## Transaction Object
 ```
 {
-	id:"b759389e6010759abf0c9c0f7b8762529f072997e6595ef46921b48dac7d2eb5",
-	blockId:"cf2c33b24ae8ea1a96128c4b3b2f2e80030588bb6c2d2408a496e200c9d6da7a",
-	version:2,
-	type:0,
-	typeGroup:1,
-	amount:"10000000000",
-	fee:"1000000",
-	sender:"D5YUm8iAiZiNCMo8boPKa94x4t1QNVQwDf",
-	senderPublicKey:"0347163bcaeac803c552f36f55c0353e4c90e05788bcf0204ad27c8291243ae5be",
-	recipient:"DCLu9eSjTtbrb7wBXHvneVz4mFbHzFnj7m",
-	signature:"06f82ebf4750cb7f347da853968432f688741c2cb0de18516faf4feec9b837ee9885b835eb74012c976c222748bb7408d9b49fc48399489cbebf7dc8f402f0bd",
-	vendorField:"friendsoflittleyus telegram faucet",
-	confirmations:2068,
+	id: "b759389e6010759abf0c9c0f7b8762529f072997e6595ef46921b48dac7d2eb5",
+	blockId: "cf2c33b24ae8ea1a96128c4b3b2f2e80030588bb6c2d2408a496e200c9d6da7a",
+	version: 2,
+	type: 0,
+	typeGroup: 1,
+	amount: "10000000000",
+	fee: "1000000",
+	sender: "D5YUm8iAiZiNCMo8boPKa94x4t1QNVQwDf",
+	senderPublicKey: "0347163bcaeac803c552f36f55c0353e4c90e05788bcf0204ad27c8291243ae5be",
+	recipient: "DCLu9eSjTtbrb7wBXHvneVz4mFbHzFnj7m",
+	signature: "06f82ebf4750cb7f347da853968432f688741c2cb0de18516faf4feec9b837ee9885b835eb74012c976c222748bb7408d9b49fc48399489cbebf7dc8f402f0bd",
+	vendorField: "friendsoflittleyus telegram faucet",
+	confirmations: 2068,
 	timestamp: {
-		epoch:5201832,
-		unix:1645419432,
-		human:"2022-02-21T04:57:12.000Z"
+		epoch: 5201832,
+		unix: 1645419432,
+		human:" 2022-02-21T04:57:12.000Z"
 	},
-	nonce:"620"
+	nonce: "620"
+}
+```
+
+## Peer Object
+```
+{
+	ip: "65.21.177.89",
+	port: 6002,
+	ports: {
+		@arkecosystem/core-api: 6003,
+		@arkecosystem/core-webhooks: -1
+	},
+	version: "3.1.1-next.3",
+	height: 38999,
+	latency: 27,
+	plugins: {
+		@arkecosystem/core-api: {
+			port: 6003,
+			enabled: true,
+			estimateTotalCount: true
+		}
+		@arkecosystem/core-webhooks: {
+			port: 6004,
+			enabled: false
+		}
+	}
+}
+```
+
+## Wallet Object
+```
+{
+	address: "D5YUm8iAiZiNCMo8boPKa94x4t1QNVQwDf",
+	publicKey: "0347163bcaeac803c552f36f55c0353e4c90e05788bcf0204ad27c8291243ae5be",
+	balance: "5723659663",
+	nonce: "739",
+	attributes: {
+		vote: "03a69af136f6a861b9f7d3412582a1a24df27b372e8933065109cedf9fd3c60a6d"
+	}
+}
+```
+
+### Delegate Object
+```
+{
+	username: "gym",
+	address: "DGymbo8YN2RJoa72ZJTkLfZTrh7LCTwFnx",
+	publicKey: "03ebcafb1cc44c848851352476c84d38c4fbc1b8661e13771cf4ee04324d8d170f",
+	votes: "13512389006545",
+	rank: 1,
+	isResigned: false,
+	blocks: {
+		produced: 806,
+		last: {
+			id: "ca30e02de294bdd9f8b10e9ddd1a377a57350f22c27c2f42d54c1690c6957666",
+			height: 39065,
+			timestamp: {
+				epoch: 351024,
+				unix: 1646011824,
+				human: "2022-02-28T01:30:24.000Z"
+			},
+		},
+	},
+	production: {
+		approval: 0.03
+	},
+	forged: {
+		fees: "428511780",
+		rewards: "545675000000",
+		total: "546103511780"
+	}
 }
 ```
